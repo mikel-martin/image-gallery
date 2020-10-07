@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    color: white;
+    background-color: rgb(233, 233, 233);
+    font-family: sans-serif, calibri, arial;
+}
+
+h1 {
+    padding-left: 25px;
+    font-weight: bold;
+}
+
+h2 {
+    color: #aaa;
+    padding-left: 25px;
+}
+
+/* ---------- HEADER ----------- */
+
+#header {
+    z-index: 5;
+    padding: 0.5em;
+    transition: 1s;
+    background-color: #1d2125;
+    box-shadow: 0px 5px 15px -7px rgba(0,0,0,0.75); 
+    -moz-box-shadow: 0px 5px 15px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 5px 15px -7px rgba(0,0,0,0.75);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    opacity: 0.9;
+    width: 100%
+}
+
+#brand {
+    display: inline;
+    font-size: 2em;
+    padding: 10px;
+    padding-right: 30px;
+    text-shadow: 2px 2px 5px black;
+}
+
+#brand a {
+    color: white;
+    text-decoration: none;
+}
+
+#brand a:hover {
+    text-decoration: underline;
+    color: rgb(216, 216, 216);
+}
+
+#upload-form {
+    margin-right: 10px;
+    margin-top: 5px;
+    height: max-content;
+    float: right;
+}
+
+@media screen and (max-width: 991px) {
+	#upload-form {
+        margin-top: 4px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #upload-form {
+        margin-top: 5px;
+    }
+}
+
+/* ---------- UPLOAD FORM ------ */
+
+#upload-btn {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    margin-right: 1em;
+    background-color: #4CAF50;
+}
+
+#upload-btn:hover {
+    text-decoration: underline;
+    background-color: #38943d;
+}
+
+#upload-btn:disabled {
+    text-decoration: none;
+    background-color: #708b71;
+}
+
+#fake-file-input {
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    margin-right: 1em;
+    background-color: #fff;
+}
+
+#fake-file-input:hover {
+    text-decoration: underline;
+    background-color: rgb(230, 230, 230);
+}
+
+#fake-file-input:disabled {
+    background-color: #708b71;
+}
+
+/* ---------- GALLERY ---------- */
+
+.gallery {
+    margin: 0.5em;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.gallery img { 
+    width: 100%; 
+    height: auto;
+    opacity: 0.85;
+    transition: 500ms;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    break-inside: avoid; 
+    page-break-inside: avoid; 
+    -webkit-column-break-inside: avoid; 
+    
+}
+
+.gallery img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+	.gallery { 
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .gallery { 
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+/* ---------- MODAL IMAGE ------ */
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-opened {
+    overflow: hidden;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#modal-img {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: auto;
+    max-width: 700px;
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+@media screen and (max-width: 991px) {
+	#modal-img {
+        width: auto;
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .gallery { 
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+    .gallery div { 
+        margin: 0; 
+        width: 200px;
+    }
+}
+
+@keyframes zoom {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+#modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#modal-close:hover,
+#modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+

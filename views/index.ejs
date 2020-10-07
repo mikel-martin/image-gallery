@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("head.ejs") %>
+    <body>
+
+        <!-- IMAGE UPLOAD FORM -->
+        <div id="header">
+            <span id="brand"><a href="#">MyGallery</a></span>
+            <form id="upload-form" action="/" method="post" encType="multipart/form-data">
+                <input id="file-input" type="file" name="imgtoupload" accept="image/*" style="display: none;" />
+                <input id="fake-file-input" type="button" value="Select image">
+                <input id="upload-btn" type="submit" value="Upload" disabled>
+            </form>
+        </div>
+
+        <!-- IMAGE GRID -->
+        <div class="gallery">
+            <% content.forEach(function(entry) { %>
+                <img src="<%- entry.name %>" class="image">
+            <% }) %>
+        </div>
+
+        <!-- MODAL IMAGE -->
+        <div id="modal">
+            <span id="modal-close">&times;</span>
+            <img id="modal-img">
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="js/modal-img.js"></script>
+        <script src="js/file-input.js"></script>
+        <script src="js/fixed-header.js"></script>
+    
+    </body>
+</html>
