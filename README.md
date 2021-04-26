@@ -4,7 +4,7 @@
 <span>Download the project, and with your terminal, navigate to the root folder of the project.<br>
     Then you will need to install nodemon to run the server:</span>
 <p style="font-weight: bold;">
-    npm install nodemon
+    npm install nodemon<br>
     npm install merge-descriptors</p>
 <span>Open the <span style="font-style: italic;">.env</span> file and set the path to the UPLOADS variable:</span>
 <p style="font-weight: bold;;">Example: UPLOADS=/home/username/pictures</p>
